@@ -49,7 +49,7 @@ org.example.project.user
 ├── UserUiState.kt         // Sealed class for UI state (Loading, Success, Error)
 ├── UserUiEffect.kt        // UI effects for one-time events (toasts, navigation)
 └── UserViewModel.kt       // ViewModel for handling events and business logic
----
+```
 
 ## 🧠 UI State (Sealed Class)
 
@@ -64,5 +64,5 @@ sealed class UserUiState {
 
 ✅ UI is mutually exclusive and easy to reason about.
 
-
+```
 
