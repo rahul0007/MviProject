@@ -40,14 +40,7 @@ It follows a **ViewModel-based architecture** with unidirectional data flow and 
 
 ## 🗂 Folder Structure
 
-org.example.project.user
-│
-├── UserScreen.kt          // Root composable: connects ViewModel and UI
-├── UserScreenContent.kt   // Main UI rendering based on state
-├── UserListItem.kt        // Single user card in the list
-├── UserUiState.kt         // Sealed class for UI state (Loading, Success, Error)
-├── UserUiEffect.kt        // UI effects for one-time events (toasts, navigation)
-└── UserViewModel.kt       // ViewModel for handling events and business logic
+<pre> org.example.project.user │ ├── UserScreen.kt // Root composable: connects ViewModel and UI ├── UserScreenContent.kt // Main UI rendering based on state ├── UserListItem.kt // Single user card in the list ├── UserUiState.kt // Sealed class for UI state (Loading, Success, Error) ├── UserUiEffect.kt // UI effects for one-time events (toasts, navigation) └── UserViewModel.kt // ViewModel for handling events and business logic </pre>
 
 ---
 
