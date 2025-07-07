@@ -40,3 +40,28 @@ It follows a **ViewModel-based architecture** with unidirectional data flow and 
 
 ## 🗂 Folder Structure
 
+│
+├── UserScreen.kt // Root composable
+├── UserScreenContent.kt // Main UI rendering
+├── UserListItem.kt // Single user card
+├── UserUiState.kt // Sealed class for UI state
+├── UserUiEffect.kt // UI effects (toasts, navigation)
+└── UserViewModel.kt // ViewModel for business logic
+
+---
+
+## 🧠 UI State (Sealed Class)
+
+```kotlin
+sealed class UserUiState {
+    object Loading : UserUiState()
+    data class Success(val users: List<User>) : UserUiState()
+    data class Error(val message: String) : UserUiState()
+}
+
+✅ Eliminates multiple flags (isLoading, error, etc.)
+
+✅ UI is mutually exclusive and easy to reason about.
+
+
+
