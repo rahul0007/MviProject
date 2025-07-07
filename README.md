@@ -10,5 +10,33 @@ This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 * `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
+# 🧠 Smart UserScreen with Compose & Clean Architecture
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+This module implements a **User list screen** using **Jetpack Compose** with a **smart UI state pattern** that is clean, scalable, and easy to maintain.  
+
+It follows a **ViewModel-based architecture** with unidirectional data flow and supports clean state management with **sealed classes**.
+
+---
+
+## 📐 Architecture Overview
+
+- **UserScreen**: Root composable that observes `UserUiState` and renders UI.
+- **UserViewModel**: Handles events, manages UI state (`UserUiState`) and side effects (`UserUiEffect`).
+- **UserUiState**: Represents UI state as a **sealed class**.
+- **UserUiEffect**: For one-time events like showing a toast.
+- **UserListItem**: Renders each user in a card layout.
+
+---
+
+## 🚀 Features
+
+✅ Clean separation of concerns  
+✅ Sealed class for UI states (**Loading**, **Success**, **Error**)  
+✅ Retry button on error  
+✅ Scalable design: easy to add pagination or pull-to-refresh  
+✅ Supports dependency injection with Koin
+
+---
+
+## 🗂 Folder Structure
+
