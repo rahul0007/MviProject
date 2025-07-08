@@ -10,7 +10,7 @@ This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 * `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-# 🧠  UserScreen with Compose & Clean Architecture
+# 🧠  UserScreen with Compose MVI & Clean Architecture
 
 This module implements a **User list screen** using **Jetpack Compose** with a **smart UI state pattern** that is clean, scalable, and easy to maintain.  
 
