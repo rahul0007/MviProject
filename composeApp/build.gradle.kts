@@ -58,6 +58,7 @@ kotlin {
         getByName("commonMain").dependencies {
             implementation(libs.sqldelight.coroutines)
             implementation(compose.runtime)
+            implementation(libs.compose.material3)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(libs.system.ui.controller)
@@ -91,8 +92,9 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.foundation.pager)
             implementation(libs.compose.runtime)
-
-            implementation("media.kamel:kamel-image:0.7.0")
+            implementation(libs.coil3.coil.compose)
+            implementation(libs.coil.network.okhttp)
+            implementation(libs.kamel.image.v070)
         }
 
 

@@ -7,5 +7,7 @@ data class User(
     val phone: String,
     val city: String,
     val country: String,
-    val pictureUrl: String
+    val pictureUrl: String,
+    val id: Int,
+
 )

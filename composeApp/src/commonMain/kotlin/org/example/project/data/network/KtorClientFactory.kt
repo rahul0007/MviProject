@@ -1,4 +1,4 @@
-package org.example.project.data.remote
+package org.example.project.data.network
 
 import io.ktor.client.*
 import io.ktor.client.plugins.HttpTimeout

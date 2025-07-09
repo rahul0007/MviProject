@@ -1,6 +1,5 @@
-package org.example.project.utils
+package org.example.project.util
 
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

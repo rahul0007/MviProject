@@ -5,11 +5,13 @@ android-minSdk = "24"
 android-targetSdk = "35"
 androidx-activityCompose = "1.9.3"
 coilCompose = "2.5.0"
+coilComposeVersion = "3.2.0"
 compose = "1.7.0"
 compose-plugin = "1.7.0"
 
 
 kamelImage = "1.0.5"
+kamelImageVersion = "0.7.0"
 kotlin = "2.0.20"
 ktor = "3.0.1"
 date-time = "0.6.1"
@@ -33,9 +35,12 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-activity = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activityCompose" }
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilComposeVersion" }
+coil3-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilComposeVersion" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 kamel-image = { module = "media.kamel:kamel-image", version.ref = "kamelImage" }
+kamel-image-v070 = { module = "media.kamel:kamel-image", version.ref = "kamelImageVersion" }
 system-ui-controller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 multiplatform-settings-no-arg = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "multiplatformSettings" }
 multiplatform-settings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "multiplatformSettings" }

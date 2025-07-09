@@ -1,16 +1,18 @@
-package org.example.project.user.componet
+package org.example.project.user.component
+
 import androidx.compose.runtime.Composable
 import org.example.project.domain.model.User
 import androidx.compose.material3.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.example.project.utils.UserImage
 import androidx.compose.foundation.layout.*
+import coil3.compose.AsyncImage
+
 @Composable
-fun UserListItem(user: User) {
+fun UserListItem(user: User, modifier: Modifier) {
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Row(
@@ -19,11 +21,19 @@ fun UserListItem(user: User) {
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            UserImage(
+            /*UserImage(
                 url = user.pictureUrl,
                 modifier = Modifier
                     .size(60.dp) // Set consistent size for image
+            )*/
+
+            AsyncImage(
+                model = user.pictureUrl,
+                contentDescription = null,
+                modifier = Modifier
+                    .size(70.dp)
             )
+
             Spacer(modifier = Modifier.width(10.dp))
 
             Column(

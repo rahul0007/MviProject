@@ -18,6 +18,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import mviproject.composeapp.generated.resources.Res
 import mviproject.composeapp.generated.resources.compose_multiplatform
 import org.example.project.di.appModule
+import org.example.project.pagination.LoadMoreUsers
 import org.example.project.user.UserScreen
 import org.koin.core.context.startKoin
 
@@ -25,14 +26,17 @@ import org.koin.core.context.startKoin
 @Preview
 fun App() {
     MaterialTheme {
-        startKoin {
+
+        /*startKoin {
             modules(
                 listOf(
                     appModule,
                 )
             )
-        }
-        UserScreen()
+        }*/
+
+        LoadMoreUsers()
+
         /*var showContent by remember { mutableStateOf(false) }
         Column(
             modifier = Modifier
