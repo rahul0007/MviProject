@@ -104,14 +104,14 @@ PullToRefreshBox(
         }
     }
 ) { ... }
+
+
 ```
----
 
 ✅ Eliminates multiple flags (isLoading, error, etc.)
 
 ✅ UI is mutually exclusive and easy to reason about.
-
-```
+---
 
 ## 📸 Screenshots
 
