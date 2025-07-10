@@ -30,16 +30,16 @@ It follows a **ViewModel-based architecture** with unidirectional data flow and 
 
 ## 🚀 Features
 ---
-✅ Clean separation of concerns  
-✅ Sealed class for UI states (**Loading**, **Success**, **Error**)  
-✅ Supports dependency injection with Koin
-✅ Pull-to-refresh support using a custom PullToRefreshBox.
-✅ Lazy loading (pagination) when scrolling to the end of the list.
-✅ Loading indicator at the center and bottom.
-✅ Error handling with retry option.
-✅ Clean MVI-style state management with UserUiState.
-✅ Designed with Jetpack Compose + Material 3.
-✅ Koin integration for ViewModel injection.
+- ✅ Clean separation of concerns  
+- ✅ Sealed class for UI states (**Loading**, **Success**, **Error**)  
+- ✅ Supports dependency injection with Koin
+- ✅ Pull-to-refresh support using a custom PullToRefreshBox.
+- ✅ Lazy loading (pagination) when scrolling to the end of the list.
+- ✅ Loading indicator at the center and bottom.
+- ✅ Error handling with retry option.
+- ✅ Clean MVI-style state management with UserUiState.
+- ✅ Designed with Jetpack Compose + Material 3.
+- ✅ Koin integration for ViewModel injection.
 
 ---
 
