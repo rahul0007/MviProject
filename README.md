@@ -29,7 +29,7 @@ It follows a **ViewModel-based architecture** with unidirectional data flow and 
 ---
 
 ## 🚀 Features
----
+
 - ✅ Clean separation of concerns  
 - ✅ Sealed class for UI states (**Loading**, **Success**, **Error**)  
 - ✅ Supports dependency injection with Koin
