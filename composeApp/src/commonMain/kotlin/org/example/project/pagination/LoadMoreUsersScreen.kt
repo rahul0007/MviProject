@@ -71,7 +71,7 @@ fun LoadMoreUsers() {
                         }.collect { lastVisibleItemIndex ->
                             val totalItems = state.users.size
                             if (lastVisibleItemIndex != null &&
-                                lastVisibleItemIndex >= totalItems - 2 && // Preload threshold
+                                lastVisibleItemIndex >= totalItems - 1 && // Preload threshold
                                 !state.isLoadingMore
                             ) {
                                 println("Triggering loadNextPage()")

@@ -82,7 +82,7 @@ class LoadMoreUserViewModel(
                 _uiState.value = UserUiState.Error(e.message ?: "Something went wrong")
             } finally {
                 isNextPageLoading = false
-                onComplete() // ✅ Stop the swipe-to-refresh indicator
+                onComplete() // Stop the swipe-to-refresh indicator
             }
         }
     }
