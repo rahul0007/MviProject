@@ -32,12 +32,26 @@ It follows a **ViewModel-based architecture** with unidirectional data flow and 
 
 ✅ Clean separation of concerns  
 ✅ Sealed class for UI states (**Loading**, **Success**, **Error**)  
-✅ Retry button on error  
-✅ Scalable design: easy to add pagination or pull-to-refresh  
 ✅ Supports dependency injection with Koin
+✅ Pull-to-refresh support using a custom PullToRefreshBox.
+✅ Lazy loading (pagination) when scrolling to the end of the list.
+✅ Loading indicator at the center and bottom.
+✅ Error handling with retry option.
+✅ Clean MVI-style state management with UserUiState.
+✅ Designed with Jetpack Compose + Material 3.
+✅ Koin integration for ViewModel injection.
 
 ---
 
+### 📦 Requirements
+
+- Kotlin 1.9+
+- Jetpack Compose (Material3)
+- Koin for dependency injection
+- Coroutines for asynchronous work
+- LazyColumn + LazyListState for pagination
+
+---
 ## 🗂 Folder Structure
 
 ```text
@@ -59,6 +73,39 @@ sealed class UserUiState {
     data class Success(val users: List<User>) : UserUiState()
     data class Error(val message: String) : UserUiState()
 }
+```
+
+
+### 🔄 Pagination Logic
+Pagination is triggered when the last visible item in the LazyColumn is scrolled into view:
+
+```kotlin
+LaunchedEffect(listState) {
+    snapshotFlow {
+        listState.layoutInfo.visibleItemsInfo.lastOrNull()?.index
+    }.collect { lastVisibleItemIndex ->
+        if (lastVisibleItemIndex == state.users.lastIndex && !state.isLoadingMore) {
+            viewModel.loadNextPage()
+        }
+    }
+}
+```
+
+
+### 🪝 Pull-to-Refresh
+- The PullToRefreshBox wraps the list to support swipe-to-refresh:
+```kotlin
+PullToRefreshBox(
+    isRefreshing = isRefreshing,
+    onRefresh = {
+        isRefreshing = true
+        viewModel.refreshData {
+            isRefreshing = false
+        }
+    }
+) { ... }
+```
+---
 
 ✅ Eliminates multiple flags (isLoading, error, etc.)
 
@@ -70,6 +117,18 @@ sealed class UserUiState {
 ## 📸 Screenshots
 
 ![Screenshot_20250708_100336](https://github.com/rahul0007/MviProject/blob/3c8a98659f5fcb4cf130c6938aca14dc773ed3c8/Screenshot_20250708_100336.png).
+
+
+----
+
+
+![PullToRefresh](https://github.com/rahul0007/MviProject/blob/3313550eb440b272ea37e2d1881ab32dffaf432f/PullToRefresh.png).
+
+
+------
+
+
+![loadMore](https://github.com/rahul0007/MviProject/blob/3313550eb440b272ea37e2d1881ab32dffaf432f/loadMore.png).
 
 
 
