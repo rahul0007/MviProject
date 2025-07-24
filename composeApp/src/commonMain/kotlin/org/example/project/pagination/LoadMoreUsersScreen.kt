@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.example.project.user.UserUiState
+import org.example.project.user.component.ShimmerUserCard
 import org.example.project.user.component.UserCard
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -26,7 +27,18 @@ fun LoadMoreUsers() {
         Box(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
             when (val state = uiState) {
                 is UserUiState.Loading -> {
-                    CircularProgressIndicator(Modifier.align(Alignment.Center))
+
+                    LazyColumn(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                        contentPadding = PaddingValues(16.dp)
+                    ) {
+                        items(15) {
+                            ShimmerUserCard()
+                        }
+                    }
+
+//                    CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }
 
                 is UserUiState.Success -> {
